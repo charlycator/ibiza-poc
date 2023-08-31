@@ -1,15 +1,19 @@
 import React, { ReactNode } from 'react';
+import Link from "next/link";
+
 
 interface CardDataStatsProps {
+  actionButtonText?: string,
   title: string;
   total: string;
-  rate: string;
+  rate?: string;
   levelUp?: boolean;
   levelDown?: boolean;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const CardDataStats: React.FC<CardDataStatsProps> = ({
+  actionButtonText,
   title,
   total,
   rate,
@@ -19,22 +23,14 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
 }) => {
   return (
     <div className="rounded-sm border border-stroke bg-white py-6 px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark">
-      <div className="flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4">
-        {children}
-      </div>
-
-      <div className="mt-4 flex items-end justify-between">
-        <div>
-          <h4 className="text-title-md font-bold text-black dark:text-white">
-            {total}
-          </h4>
-          <span className="text-sm font-medium">{title}</span>
-        </div>
-
+      <h2 className=" w-full h-11.5 items-center rounded-full" style={{ fontSize: '1.65rem' }}>
+        {total} {title}
+      </h2>
+      {children}
+      <div className='flex flex-row justify-between'>
         <span
-          className={`flex items-center gap-1 text-sm font-medium ${
-            levelUp && 'text-meta-3'
-          } ${levelDown && 'text-meta-5'} `}
+          className={`flex items-center gap-1 text-sm font-medium ${levelUp && 'text-meta-3'
+            } ${levelDown && 'text-meta-5'} `}
         >
           {rate}
 
@@ -69,7 +65,19 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
             </svg>
           )}
         </span>
+        {actionButtonText && (
+          <Link
+            href="#"
+            className="inline-flex items-center justify-center bg-meta-4 dark:bg-black dark:text-white py-2 px-5 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
+          >
+            {actionButtonText}
+          </Link>
+        )}
       </div>
+
+
+
+
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { BRAND } from "@/types/brand";
 import Image from "next/image";
+import { FC } from "react";
 
 const brandData: BRAND[] = [
   {
@@ -44,11 +45,17 @@ const brandData: BRAND[] = [
   },
 ];
 
-const TableOne = () => {
+interface IProps {
+  actionButtonText?: string,
+  total?: string,
+  title: string,
+}
+
+const TableOne: FC<IProps> = ({ total, title, actionButtonText }) => {
   return (
     <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
       <h4 className="mb-6 text-xl font-semibold text-black dark:text-white">
-        Top Channels
+        {title}{total && (<span>: {total}</span>)}
       </h4>
 
       <div className="flex flex-col">

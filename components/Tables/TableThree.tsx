@@ -1,4 +1,6 @@
 import { Package } from "@/types/package";
+import Link from "next/link";
+import { FC, Key } from "react";
 
 const packageData: Package[] = [
   {
@@ -27,55 +29,80 @@ const packageData: Package[] = [
   },
 ];
 
-const TableThree = () => {
+type dataType = {
+  date: string;
+  concept: string;
+  amount?: string;
+  invested: string;
+  status?: string;
+}
+
+interface IProps {
+  title: string,
+  data: dataType[],
+  headers: string[],
+  showActionButtons?: boolean,
+  showMoreButton?: boolean,
+}
+
+const TableThree: FC<IProps> = ({
+  title,
+  data,
+  headers,
+  showActionButtons = false,
+  showMoreButton = true,
+}) => {
   return (
     <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+      <h4 className="mb-6 text-xl font-semibold text-black dark:text-white">
+        {title}
+      </h4>
       <div className="max-w-full overflow-x-auto">
         <table className="w-full table-auto">
           <thead>
             <tr className="bg-gray-2 text-left dark:bg-meta-4">
               <th className="min-w-[220px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
-                Package
+                {headers[0]}
               </th>
               <th className="min-w-[150px] py-4 px-4 font-medium text-black dark:text-white">
-                Invoice date
+                {headers[1]}
               </th>
-              <th className="min-w-[120px] py-4 px-4 font-medium text-black dark:text-white">
-                Status
-              </th>
-              <th className="py-4 px-4 font-medium text-black dark:text-white">
-                Actions
-              </th>
+              {headers[2] && (<th className="min-w-[120px] py-4 px-4 font-medium text-black dark:text-white">
+                {headers[2]}
+              </th>)}
+              {headers[3] && (
+                <th className="py-4 px-4 font-medium text-black dark:text-white">
+                  {headers[3]}
+                </th>)}
             </tr>
           </thead>
           <tbody>
-            {packageData.map((packageItem, key) => (
+            {data.map((item: dataType, key: Key | null | undefined) => (
               <tr key={key}>
-                <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
+                <td className="border-b border-[#eee] py-5 px-4  dark:border-strokedark xl:pl-11">
                   <h5 className="font-medium text-black dark:text-white">
-                    {packageItem.name}
+                    {item.date}
                   </h5>
-                  <p className="text-sm">${packageItem.price}</p>
+                  <p className="text-sm">{item.concept}</p>
                 </td>
-                <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
+                {item.amount && <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                   <p className="text-black dark:text-white">
-                    {packageItem.invoiceDate}
+                    {item.amount}
                   </p>
-                </td>
+                </td>}
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                   <p
-                    className={`inline-flex rounded-full bg-opacity-10 py-1 px-3 text-sm font-medium ${
-                      packageItem.status === "Paid"
-                        ? "text-success bg-success"
-                        : packageItem.status === "Unpaid"
+                    className={`inline-flex rounded-full bg-opacity-10 py-1 px-3 text-sm font-medium ${item.status === "Paid" || !item.status
+                      ? "text-success bg-success"
+                      : item.status === "Unpaid"
                         ? "text-danger bg-danger"
                         : "text-warning bg-warning"
-                    }`}
+                      }`}
                   >
-                    {packageItem.status}
+                    {item.invested}
                   </p>
                 </td>
-                <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
+                {showActionButtons && <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                   <div className="flex items-center space-x-3.5">
                     <button className="hover:text-primary">
                       <svg
@@ -143,11 +170,21 @@ const TableThree = () => {
                       </svg>
                     </button>
                   </div>
-                </td>
+                </td>}
               </tr>
             ))}
           </tbody>
         </table>
+        {showMoreButton && (
+          <div className="h-16 bg-white dark:bg-boxdark flex flex-row justify-center items-center font-medium text-black dark:text-white">
+            <Link
+              href="#"
+              className="inline-flex items-center justify-center rounded-md border border-black dark:bg-black dark:text-white py-1 px-10 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10"
+            >
+              Load more
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

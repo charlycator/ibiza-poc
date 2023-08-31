@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const options: ApexOptions = {
-  colors: ["#3C50E0", "#80CAEE"],
+  colors: ["#375E83", "#10B981", "#259AE6", "#FFA70B"],
   chart: {
     // events: {
     //   beforeMount: (chart) => {
@@ -46,11 +46,11 @@ const options: ApexOptions = {
     },
   },
   dataLabels: {
-    enabled: false,
+    enabled: true,
   },
 
   xaxis: {
-    categories: ["M", "T", "W", "T", "F", "S", "S"],
+    categories: ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
   },
   legend: {
     position: "top",
@@ -79,12 +79,20 @@ const ChartTwo: React.FC = () => {
   const [state, setState] = useState<ChartTwoState>({
     series: [
       {
-        name: "Sales",
-        data: [44, 55, 41, 67, 22, 43, 65],
+        name: "Bitcoin",
+        data: [23, 20, 18, 18, 17, 21, 22],
       },
       {
-        name: "Revenue",
-        data: [13, 23, 20, 8, 13, 27, 15],
+        name: "Ether",
+        data: [42, 38, 50, 46, 30, 41, 40],
+      },
+      {
+        name: "USDC",
+        data: [20, 20, 20, 20, 20, 20, 20],
+      },
+      {
+        name: "SOL",
+        data: [15, 14, 15, 16, 12, 12, 10],
       },
     ],
   });
@@ -101,7 +109,7 @@ const ChartTwo: React.FC = () => {
       <div className="mb-4 justify-between gap-4 sm:flex">
         <div>
           <h4 className="text-xl font-semibold text-black dark:text-white">
-            Profit this week
+            Weekly profit (USD)
           </h4>
         </div>
         <div>
