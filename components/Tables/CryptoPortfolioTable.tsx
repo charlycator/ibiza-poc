@@ -9,6 +9,7 @@ import {
   ADACryptoIcon,
   RippleCryptoIcon,
 } from "@/components/Icons";
+import Link from "next/link";
 
 type CRYPTO_PORTFOLIO = {
   logo: React.ReactNode;
@@ -95,7 +96,7 @@ const CryptoPortfolioTable: FC<IProps> = ({ total, title, actionButtonText }) =>
       </h4>
 
       <div className="flex flex-col">
-        <div className="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-5">
+        <div className="grid grid-cols-6 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-6">
           <div className="p-2.5 xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Crypto
@@ -121,11 +122,16 @@ const CryptoPortfolioTable: FC<IProps> = ({ total, title, actionButtonText }) =>
               Profit
             </h5>
           </div>
+          <div className="hidden p-2.5 text-center sm:block xl:p-5">
+            <h5 className="text-sm font-medium uppercase xsm:text-base">
+              Action
+            </h5>
+          </div>
         </div>
 
         {data.map((item, key) => (
           <div
-            className={`grid grid-cols-3 sm:grid-cols-5 ${key === data.length - 1
+            className={`grid grid-cols-6 sm:grid-cols-6 ${key === data.length - 1
               ? ""
               : "border-b border-stroke dark:border-strokedark"
               }`}
@@ -168,9 +174,19 @@ const CryptoPortfolioTable: FC<IProps> = ({ total, title, actionButtonText }) =>
               </p>
             </div>
 
+            <div className="hidden justify-center sm:flex xl:p-5">
+              <Link
+                href="#"
+                className="inline-flex items-center bg-meta-4 dark:bg-black dark:text-white py-1 px-2 text-center font-medium text-white hover:bg-opacity-90"
+              >
+                Withdraw
+              </Link>
+            </div>
+
           </div>
         ))}
       </div>
+      
     </div>
   );
 };

@@ -1,47 +1,83 @@
-import { BRAND } from "@/types/brand";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { FC } from "react";
 
-const brandData: BRAND[] = [
+import saveTheChildrenLogo from '../../images/ngo-save-the-children.png';
+import ukraineLogo from '../../images/ngo-ukraine.png';
+import yuvaLogo from '../../images/ngo-yuva.jpg';
+import redCrossLogo from '../../images/ngo-red-cross.png';
+import Link from "next/link";
+
+type DONATIONS_DATA = {
+  date: string;
+  ngoLogo: StaticImageData | string;
+  ngoLogoH: number;
+  ngoLogoW: number;
+  name: string;
+  cryptoAmount: number;
+  crypto: string;
+  cryptoSymbol: string;
+}
+
+const data: DONATIONS_DATA[] = [
   {
-    logo: "/images/brand/brand-01.svg",
-    name: "Google",
-    visitors: 3.5,
-    revenues: "5,768",
-    sales: 590,
-    conversion: 4.8,
+    date: '25/08/2023',
+    crypto: 'Ether',
+    cryptoSymbol: 'ETH',
+    cryptoAmount: 0.4,
+    ngoLogo: ukraineLogo,
+    ngoLogoH: 40,
+    ngoLogoW: 30,
+    name: 'Humanitarian Assistance to Ukrainians',
   },
   {
-    logo: "/images/brand/brand-02.svg",
-    name: "Twitter",
-    visitors: 2.2,
-    revenues: "4,635",
-    sales: 467,
-    conversion: 4.3,
+    date: '25/08/2023',
+    crypto: 'Bitcoin',
+    cryptoSymbol: 'BTC',
+    cryptoAmount: 0.01,
+    ngoLogo: saveTheChildrenLogo,
+    ngoLogoH: 40,
+    ngoLogoW: 40,
+    name: 'Save the Children',
   },
   {
-    logo: "/images/brand/brand-03.svg",
-    name: "Github",
-    visitors: 2.1,
-    revenues: "4,290",
-    sales: 420,
-    conversion: 3.7,
+    date: '22/08/2023',
+    crypto: 'USDC',
+    cryptoSymbol: 'USDC',
+    cryptoAmount: 23,
+    ngoLogo: redCrossLogo,
+    ngoLogoH: 40,
+    ngoLogoW: 40,
+    name: 'International Red Cross',
   },
   {
-    logo: "/images/brand/brand-04.svg",
-    name: "Vimeo",
-    visitors: 1.5,
-    revenues: "3,580",
-    sales: 389,
-    conversion: 2.5,
+    date: '22/08/2023',
+    crypto: 'USDC',
+    cryptoSymbol: 'USDC',
+    cryptoAmount: 50,
+    ngoLogo: yuvaLogo,
+    ngoLogoH: 40,
+    ngoLogoW: 40,
+    name: 'Yuva',
   },
   {
-    logo: "/images/brand/brand-05.svg",
-    name: "Facebook",
-    visitors: 3.5,
-    revenues: "6,768",
-    sales: 390,
-    conversion: 4.2,
+    date: '21/08/2023',
+    crypto: 'Ether',
+    cryptoSymbol: 'ETH',
+    cryptoAmount: 0.2,
+    ngoLogo: ukraineLogo,
+    ngoLogoH: 40,
+    ngoLogoW: 30,
+    name: 'Humanitarian Assistance to Ukrainians',
+  },
+  {
+    date: '15/07/2023',
+    crypto: 'Ether',
+    cryptoSymbol: 'ETH',
+    cryptoAmount: 0.1,
+    ngoLogo: ukraineLogo,
+    ngoLogoH: 40,
+    ngoLogoW: 30,
+    name: 'Humanitarian Assistance to Ukrainians',
   },
 ];
 
@@ -51,7 +87,7 @@ interface IProps {
   title: string,
 }
 
-const DonationsTxsTable: FC<IProps> = ({ total, title, actionButtonText }) => {
+const DonationsTxsTable: FC<IProps> = ({ total, title, }) => {
   return (
     <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
       <h4 className="mb-6 text-xl font-semibold text-black dark:text-white">
@@ -59,69 +95,62 @@ const DonationsTxsTable: FC<IProps> = ({ total, title, actionButtonText }) => {
       </h4>
 
       <div className="flex flex-col">
-        <div className="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-5">
+        <div className="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-3">
           <div className="p-2.5 xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Source
+              Date
             </h5>
           </div>
           <div className="p-2.5 text-center xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Visitors
+              NGO
             </h5>
           </div>
           <div className="p-2.5 text-center xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Revenues
-            </h5>
-          </div>
-          <div className="hidden p-2.5 text-center sm:block xl:p-5">
-            <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Sales
-            </h5>
-          </div>
-          <div className="hidden p-2.5 text-center sm:block xl:p-5">
-            <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Conversion
+              Amount
             </h5>
           </div>
         </div>
 
-        {brandData.map((brand, key) => (
+        {data.map((item, key) => (
           <div
-            className={`grid grid-cols-3 sm:grid-cols-5 ${
-              key === brandData.length - 1
+            className={`grid grid-cols-3 sm:grid-cols-3 ${key === data.length - 1
                 ? ""
                 : "border-b border-stroke dark:border-strokedark"
-            }`}
+              }`}
             key={key}
           >
             <div className="flex items-center gap-3 p-2.5 xl:p-5">
-              <div className="flex-shrink-0">
-                <Image src={brand.logo} alt="Brand" width={48} height={48} />
-              </div>
               <p className="hidden text-black dark:text-white sm:block">
-                {brand.name}
+                {item.date}
               </p>
             </div>
 
-            <div className="flex items-center justify-center p-2.5 xl:p-5">
-              <p className="text-black dark:text-white">{brand.visitors}K</p>
+            <div className="flex flex-col items-start py-2.5 xl:py-5">
+              <div className="flex flex-row items-center">
+                <Image src={item.ngoLogo} height={item.ngoLogoH} width={item.ngoLogoW} alt={item.name} />
+                <span className="pl-2 text-black dark:text-white">
+                  {item.name}
+                </span>
+              </div>
             </div>
 
-            <div className="flex items-center justify-center p-2.5 xl:p-5">
-              <p className="text-meta-3">${brand.revenues}</p>
-            </div>
-
-            <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-              <p className="text-black dark:text-white">{brand.sales}</p>
-            </div>
-
-            <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-              <p className="text-meta-5">{brand.conversion}%</p>
+            <div className="flex justify-center p-2.5 xl:p-5 items-center">
+              <p className="text-black dark:text-white">
+                {item.cryptoAmount} {item.cryptoSymbol}
+              </p>
             </div>
           </div>
         ))}
+      </div>
+      <div className="h-16 bg-white dark:bg-boxdark flex flex-row justify-center items-center font-medium text-black dark:text-white">
+        <Link
+          href="#"
+          className="inline-flex items-center justify-center rounded-md border border-black dark:bg-black dark:text-white py-1 px-10 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10"
+        >
+          Load more
+        </Link>
       </div>
     </div>
   );

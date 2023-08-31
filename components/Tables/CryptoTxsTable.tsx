@@ -180,15 +180,14 @@ const CryptoTxsTable: FC<IProps> = ({ total, title, actionButtonText }) => {
           </div>
         ))}
       </div>
-
       <div className="h-16 bg-white dark:bg-boxdark flex flex-row justify-center items-center font-medium text-black dark:text-white">
-            <Link
-              href="#"
-              className="inline-flex items-center justify-center rounded-md border border-black dark:bg-black dark:text-white py-1 px-10 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10"
-            >
-              Load more
-            </Link>
-          </div>
+        <Link
+          href="#"
+          className="inline-flex items-center justify-center rounded-md border border-black dark:bg-black dark:text-white py-1 px-10 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10"
+        >
+          Load more
+        </Link>
+      </div>
     </div>
   );
 };
