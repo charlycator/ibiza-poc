@@ -1,11 +1,18 @@
-import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import Image from "next/image";
+
+import {
+  BitcoinCryptoIcon,
+  EtherCryptoIcon,
+  SOLCryptoIcon,
+} from "@/components/Icons";
 
 const Settings = () => {
   return (
     <>
       <div className="mx-auto max-w-270">
-        <Breadcrumb pageName="Settings" />
+        <h3 className="mb-8 text-2xl font-semibold text-black dark:text-white">
+          Settings
+        </h3>
 
         <div className="grid grid-cols-5 gap-8">
           <div className="col-span-5 xl:col-span-3">
@@ -232,7 +239,7 @@ const Settings = () => {
             <div className="mt-12 rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
               <div className="border-b border-stroke py-4 px-7 dark:border-strokedark">
                 <h3 className="font-medium text-black dark:text-white">
-                  Crypto information (from your connected wallets)
+                  Crypto addresses (from your connected wallets)
                 </h3>
               </div>
               <div className="p-7">
@@ -240,10 +247,13 @@ const Settings = () => {
                   <div className="mb-5.5 flex flex-col gap-5.5 sm:flex-row">
                     <div className="w-full">
                       <label
-                        className="mb-3 block text-sm font-medium text-black dark:text-white"
+                        className="mb-3 flex flex-row text-sm font-medium text-black dark:text-white"
                         htmlFor="ethereumAdd"
                       >
-                        Ethereum address
+                        <EtherCryptoIcon white={false} />
+                        <span className="pl-1">
+                          Ethereum address
+                        </span>
                       </label>
                       <div className="relative flex justify-between">
                         <input
@@ -266,10 +276,13 @@ const Settings = () => {
 
                   <div className="mb-5.5">
                     <label
-                      className="mb-3 block text-sm font-medium text-black dark:text-white"
+                      className="flex flex-row mb-3 text-sm font-medium text-black dark:text-white"
                       htmlFor="bitcoinAddr"
                     >
-                      Bitcoin address
+                      <BitcoinCryptoIcon white={false} />
+                      <span className="pl-1">
+                        Bitcoin address
+                      </span>
                     </label>
                     <div className="relative flex justify-between">
                       <input
@@ -279,6 +292,34 @@ const Settings = () => {
                         id="bitcoinAdd"
                         placeholder="1Lbcfr7sAHTD9CgdQo3HTMTkV8LK4ZnX71.9"
                         defaultValue="1Lbcfr7sAHTD9CgdQo3HTMTkV8LK4ZnX71.9"
+                      />
+                      <button
+                        className="ml-4 flex items-center justify-center rounded border border-stroke py-2 px-6 font-medium text-black hover:shadow-1 dark:border-strokedark dark:text-white"
+                        type="submit"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="mb-5.5">
+                    <label
+                      className="mb-3 flex flex-row text-sm font-medium text-black dark:text-white"
+                      htmlFor="solanaAddr"
+                    >
+                      <SOLCryptoIcon white={false} />
+                      <span className="pl-1">
+                        Solana address
+                      </span>
+                    </label>
+                    <div className="relative flex justify-between">
+                      <input
+                        className="w-full rounded border border-stroke bg-gray py-3 pl-4 pr-4.5 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
+                        type="email"
+                        name="solanaAddr"
+                        id="solanaAddr"
+                        placeholder="9WzDXwBbjkg8ZTbNMqUxvQRAyrZzDsGYdLVL0zYtAWWM.9"
+                        defaultValue="9WzDXwBbjkg8ZTbNMqUxvQRAyrZzDsGYdLVL0zYtAWWM.9"
                       />
                       <button
                         className="ml-4 flex items-center justify-center rounded border border-stroke py-2 px-6 font-medium text-black hover:shadow-1 dark:border-strokedark dark:text-white"

@@ -4,26 +4,30 @@ import Link from "next/link";
 
 interface CardDataStatsProps {
   actionButtonText?: string,
-  title: string;
-  total: string;
-  rate?: string;
-  levelUp?: boolean;
-  levelDown?: boolean;
-  children?: ReactNode;
+  title: string,
+  total: string,
+  rate?: string,
+  levelUp?: boolean,
+  levelDown?: boolean,
+  children?: ReactNode,
+  actionButtonLink?: string,
+  successText?: boolean,
 }
 
 const CardDataStats: React.FC<CardDataStatsProps> = ({
   actionButtonText,
+  actionButtonLink,
   title,
   total,
   rate,
   levelUp,
   levelDown,
+  successText = false,
   children,
 }) => {
   return (
     <div className="rounded-sm border border-stroke bg-white py-6 px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark">
-      <h2 className=" w-full h-11.5 items-center rounded-full" style={{ fontSize: '1.65rem' }}>
+      <h2 className={`${successText && 'text-success '}w-full h-11.5 items-center rounded-full`} style={{ fontSize: '1.65rem' }}>
         {total} {title}
       </h2>
       {children}
@@ -65,19 +69,15 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
             </svg>
           )}
         </span>
-        {actionButtonText && (
+        {actionButtonText && actionButtonLink && (
           <Link
-            href="#"
+            href={actionButtonLink}
             className="inline-flex items-center justify-center bg-meta-4 dark:bg-black dark:text-white py-2 px-5 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
           >
             {actionButtonText}
           </Link>
         )}
       </div>
-
-
-
-
     </div>
   );
 };

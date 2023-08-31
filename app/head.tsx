@@ -1,9 +1,9 @@
 export default function Head() {
   return (
     <>
-      <title> TailAdmin | E-commerce Dashboard Tempalte </title>
+      <title> HOZON | Spare change to crypto </title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <meta name="description" content="Built with Next.js and TypeScript" />
+      <meta name="description" content="HOZON spare change to crypto" />
       <link rel="icon" href="/images/favicon.ico" />
     </>
   );

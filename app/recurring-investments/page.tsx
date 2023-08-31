@@ -11,9 +11,9 @@ import {
 const TablesPage = () => {
   return (
     <>
-      <h1 className="text-3xl font-bold text-black dark:text-white mb-4">
+      <h3 className="mb-8 text-2xl font-semibold text-black dark:text-white">
         Your bank transactions
-      </h1>
+      </h3>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-2 2xl:gap-7.5 mb-12">
         <CardDataStats
           title="bank movements"
