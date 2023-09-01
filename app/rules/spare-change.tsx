@@ -27,7 +27,7 @@ const SpareChangeRules: FC = () => {
       }
     ]
 
-    const onOptionChange = (e) => {
+    const onOptionChange = (e: any) => {
       setSpareChange(e.target.value);
     }
     return data.map((item, key) => (
