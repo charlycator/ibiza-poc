@@ -1,20 +1,7 @@
-import { FC, forwardRef, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 
-interface IProps {
-  onChangeSwitch: Function,
-  isSelected?: boolean,
-  name?: string,
-  ref: HTMLInputElement
-}
-
-const SwitcherTwo: FC<IProps> = forwardRef(({ onChangeSwitch, name, isSelected = false, ref }) => {
-  const [enabled, setEnabled] = useState(isSelected);
-
-  console.log('NAME: ', name);
-
-  useEffect(() => {
-    onChangeSwitch(enabled);
-  }, [enabled]);
+const SwitcherTwo: FC = () => {
+  const [enabled, setEnabled] = useState(false);
 
   return (
     <div x-data="{ switcherToggle: false }">
@@ -41,6 +28,6 @@ const SwitcherTwo: FC<IProps> = forwardRef(({ onChangeSwitch, name, isSelected =
       </label>
     </div>
   );
-})
+}
 
 export default SwitcherTwo;
