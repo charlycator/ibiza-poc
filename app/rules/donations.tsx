@@ -84,16 +84,16 @@ const DonationsRules: FC = () => {
     <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
       <div className=" border-stroke py-4 px-6.5 dark:border-strokedark">
         <h3 className="font-medium text-black dark:text-white flex flex-row justify-between">
-          Invest in the NGOs that best suits you
+          Contribute to the cause of your choice
           <USDCCryptoIcon white={false} size={25} />
         </h3>
       </div>
       <p className='p-6'>
-        Help the NGOs you want to support in carrying out their work and reaching more people. We will donate them USDC on a monthly basis, without you having to worry about anything else. We do not charge any fees for this transfer to ensure that they receive the full amount.
+        Help the causes that you want to support in carrying out their work and reaching more people. We will donate them USDC on a monthly basis, without you having to worry about anything else. We do not charge any fees for this transfer to ensure that they receive the full amount.
         If you don't have enough USDC in your portfolio, we will charge the necessary amount to your bank account to make possible the donation.
       </p>
       <p className='p-6'>
-        Right now you are donating to:
+        Right now you are supporting to:
       </p>
 
       <List />
@@ -106,7 +106,7 @@ const DonationsRules: FC = () => {
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
               </svg>
             </div>
-            <input type="search" id="default-search" className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search and add NGO..." required />
+            <input type="search" id="default-search" className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for a cause..." required />
           </div>
         </form>
       </div>

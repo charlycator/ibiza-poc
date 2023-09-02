@@ -90,7 +90,7 @@ const DonationsPortfolioTable: FC<IProps> = ({ total, title, actionButtonText })
         <div className="grid grid-cols-4 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-4">
           <div className="p-2.5 xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
-              NGO
+              Cause
             </h5>
           </div>
           <div className="p-2.5 text-center xl:p-5">

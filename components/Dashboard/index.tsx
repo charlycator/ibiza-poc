@@ -16,7 +16,7 @@ const ECommerce: React.FC = () => {
   return (
     <>
       <h3 className="mb-8 text-2xl font-semibold text-black dark:text-white">
-        Your position
+        Your portfolio
       </h3>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
         <CardDataStats
@@ -28,17 +28,17 @@ const ECommerce: React.FC = () => {
         <CardDataStats
           actionButtonText="Withdraw"
           actionButtonLink="/crypto-portfolio"
-          title="Earnings"
+          title="Increased"
           total="$1450">
         </CardDataStats>
         <CardDataStats
-          actionButtonText="Update portfolio"
+          actionButtonText="Update"
           actionButtonLink="/rules"
           title="cryptos holded"
           total="4">
         </CardDataStats>
         <CardDataStats
-          actionButtonText="New donation"
+          actionButtonText="Donate"
           actionButtonLink="/rules"
           title="in donations"
           total="$682">

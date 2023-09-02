@@ -32,15 +32,15 @@ const TablesPage = () => {
         </CardDataStats>
         <CardDataStats
           actionButtonText="Update rule"
-          title="tracked payroll"
+          title="tracked payrolls"
           total="8">
           <h2 className="font-bold w-full h-11.5 items-center rounded-full" style={{ fontSize: '1.65rem' }}>
-            $2017 from your payroll
+            $2017 from payrolls
           </h2>
         </CardDataStats>
         <CardDataStats
           actionButtonText="Update rule"
-          title="manual investments set"
+          title="manual investments"
           total="4">
           <h2 className="font-bold w-full h-11.5 items-center rounded-full" style={{ fontSize: '1.65rem' }}>
             $600 in recurring inv. 
@@ -53,7 +53,7 @@ const TablesPage = () => {
           data={spareData}
           headers={spareHeaders}/>
         <TableThree
-          title="Payroll"
+          title="Payrolls"
           data={salariesData}
           headers={salariesHeaders}/>
         <TableThree

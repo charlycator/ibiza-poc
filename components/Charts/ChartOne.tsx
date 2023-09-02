@@ -160,7 +160,7 @@ const ChartOne: React.FC = () => {
 
         <div>
           <h4 className="text-xl font-semibold text-black dark:text-white">
-            Revenue (USD)
+            Portfolio value (USD)
           </h4>
         </div>
         </div>

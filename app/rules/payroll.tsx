@@ -5,7 +5,7 @@ const PayrollRules: FC = () => {
     <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
       <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
         <h3 className="font-medium text-black dark:text-white">
-          Invest part of your salary
+          Pay-checks and earnings
         </h3>
       </div>
       <p className='p-6'>
