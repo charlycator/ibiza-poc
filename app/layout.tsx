@@ -1,12 +1,15 @@
 "use client";
+
 import "./globals.css";
 import "./data-tables-css.css";
 import "./satoshi.css";
 import { useState, useEffect } from "react";
 import Loader from "@/components/common/Loader";
+import Metadata from "./medata";
 
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
+
 
 export default function RootLayout({
   children,
@@ -14,7 +17,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -23,6 +25,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <Metadata />
       <body suppressHydrationWarning={true}>
         <div className="dark:bg-boxdark-2 dark:text-bodydark">
           {loading ? (
