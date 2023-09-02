@@ -4,6 +4,8 @@ import { usePathname } from "next/navigation";
 import SidebarLinkGroup from "./SidebarLinkGroup";
 import Image from "next/image";
 
+import hozonLogoWhite from "../../images/hozon-logo-white.png";
+
 interface SidebarProps {
   sidebarOpen: boolean;
   setSidebarOpen: (arg: boolean) => void;
@@ -65,10 +67,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       <div className="flex items-center justify-between gap-2 px-6 pt-5.5 lg:pt6.5">
         <Link href="/">
           <Image
-            width={200}
-            height={50}
-            src={"/images/logo/logo.svg"}
-            alt="Logo"
+            style={{ marginLeft: '105px'}}
+            width={30}
+            height={30}
+            src={hozonLogoWhite}
+            alt="Hozon logo"
           />
         </Link>
 
