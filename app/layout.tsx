@@ -5,10 +5,10 @@ import "./data-tables-css.css";
 import "./satoshi.css";
 import { useState, useEffect } from "react";
 import Loader from "@/components/common/Loader";
-import Metadata from "./medata";
 
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
+import Head from "./head";
 
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <Metadata />
+      <Head />      
       <body suppressHydrationWarning={true}>
         <div className="dark:bg-boxdark-2 dark:text-bodydark">
           {loading ? (
