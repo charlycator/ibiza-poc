@@ -34,7 +34,7 @@ const ECommerce: React.FC = () => {
         <CardDataStats
           actionButtonText="Update"
           actionButtonLink="/rules"
-          title="cryptos holded"
+          title="cryptos held"
           total="4">
         </CardDataStats>
         <CardDataStats

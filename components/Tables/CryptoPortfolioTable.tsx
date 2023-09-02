@@ -16,7 +16,7 @@ type CRYPTO_PORTFOLIO = {
   symbol: string;
   crypto: string;
   unitValue: number;
-  holded: number;
+  held: number;
   invested: number;
   current: number;
   profit: string;
@@ -30,7 +30,7 @@ const data: CRYPTO_PORTFOLIO[] = [
     crypto: 'Ether',
     symbol: 'ETH',
     unitValue: 1600,
-    holded: 2,
+    held: 2,
     invested: 2100,
     current: 3200,
     profit: '+52.38%',
@@ -41,7 +41,7 @@ const data: CRYPTO_PORTFOLIO[] = [
     crypto: 'Bitcoin',
     symbol: 'BTC',
     unitValue: 27000,
-    holded: 0.05,
+    held: 0.05,
     invested: 1000,
     current: 1350,
     profit: '+35%',
@@ -52,7 +52,7 @@ const data: CRYPTO_PORTFOLIO[] = [
     crypto: 'SOL',
     symbol: 'SOL',
     unitValue: 20,
-    holded: 10,
+    held: 10,
     invested: 520,
     current: 200,
     profit: '-38.4%',
@@ -63,7 +63,7 @@ const data: CRYPTO_PORTFOLIO[] = [
     crypto: 'USDC',
     symbol: 'USDC',
     unitValue: 1,
-    holded: 156,
+    held: 156,
     invested: 156,
     current: 156,
     profit: '0%',
@@ -74,7 +74,7 @@ const data: CRYPTO_PORTFOLIO[] = [
     crypto: 'ADA',
     symbol: 'ADA',
     unitValue: 0.25,
-    holded: 0,
+    held: 0,
     invested: 0,
     current: 0,
     profit: '-',
@@ -104,7 +104,7 @@ const CryptoPortfolioTable: FC<IProps> = ({ total, title, actionButtonText }) =>
           </div>
           <div className="p-2.5 text-center xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Holded
+              Held
             </h5>
           </div>
           <div className="p-2.5 text-center xl:p-5">
@@ -152,7 +152,7 @@ const CryptoPortfolioTable: FC<IProps> = ({ total, title, actionButtonText }) =>
 
             <div className="flex justify-center p-2.5 xl:p-5">
               <p className="text-black dark:text-white">
-                {item.holded} {item.symbol}
+                {item.held} {item.symbol}
               </p>
             </div>
 
