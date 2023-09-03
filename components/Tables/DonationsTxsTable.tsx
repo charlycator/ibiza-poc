@@ -95,13 +95,13 @@ const DonationsTxsTable: FC<IProps> = ({ total, title, }) => {
       </h4>
 
       <div className="flex flex-col">
-        <div className="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-3">
-          <div className="p-2.5 xl:p-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4">
+          <div className="hidden md:block p-2.5 xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Date
             </h5>
           </div>
-          <div className="p-2.5 text-center xl:p-5">
+          <div className="p-2.5 xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Cause
             </h5>
@@ -115,24 +115,27 @@ const DonationsTxsTable: FC<IProps> = ({ total, title, }) => {
 
         {data.map((item, key) => (
           <div
-            className={`grid grid-cols-3 sm:grid-cols-3 ${key === data.length - 1
+            className={`grid grid-cols-2 md:grid-cols-3 ${key === data.length - 1
                 ? ""
                 : "border-b border-stroke dark:border-strokedark"
               }`}
             key={key}
           >
-            <div className="flex items-center gap-3 p-2.5 xl:p-5">
-              <p className="hidden text-black dark:text-white sm:block">
+            <div className="hidden md:block items-center gap-3 p-2.5 xl:p-5">
+              <p className="text-black dark:text-white">
                 {item.date}
               </p>
             </div>
 
             <div className="flex flex-col items-start py-2.5 xl:py-5">
               <div className="flex flex-row items-center">
-                <Image src={item.ngoLogo} height={item.ngoLogoH} width={item.ngoLogoW} alt={item.name} />
+                <Image className="hidden md:block "src={item.ngoLogo} height={item.ngoLogoH} width={item.ngoLogoW} alt={item.name} />
                 <span className="pl-2 text-black dark:text-white">
                   {item.name}
                 </span>
+              </div>
+              <div className="block md:hidden pl-2.5">
+                {item.date}
               </div>
             </div>
 

@@ -87,13 +87,13 @@ const DonationsPortfolioTable: FC<IProps> = ({ total, title, actionButtonText })
       </h4>
 
       <div className="flex flex-col">
-        <div className="grid grid-cols-4 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-4">
+        <div className="grid grid-cols-2 rounded-sm bg-gray-2 dark:bg-meta-4 md:grid-cols-4">
           <div className="p-2.5 xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Cause
             </h5>
           </div>
-          <div className="p-2.5 text-center xl:p-5">
+          <div className="p-2.5 text-center xl:p-5 hidden md:block">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Contact
             </h5>
@@ -104,7 +104,7 @@ const DonationsPortfolioTable: FC<IProps> = ({ total, title, actionButtonText })
             </h5>
           </div>
 
-          <div className="p-2.5 text-center xl:p-5">
+          <div className="p-2.5 text-center xl:p-5 hidden md:block">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Donate more
             </h5>
@@ -113,7 +113,7 @@ const DonationsPortfolioTable: FC<IProps> = ({ total, title, actionButtonText })
 
         {data.map((item, key) => (
           <div
-            className={`grid grid-cols-4 sm:grid-cols-4 ${key === data.length - 1
+            className={`grid grid-cols-2 md:grid-cols-4 ${key === data.length - 1
               ? ""
               : "border-b border-stroke dark:border-strokedark"
               }`}
@@ -121,14 +121,32 @@ const DonationsPortfolioTable: FC<IProps> = ({ total, title, actionButtonText })
           >
             <div className="flex flex-col items-start py-2.5 xl:py-5">
               <div className="flex flex-row items-center">
-                <Image src={item.ngoLogo} height={item.ngoLogoH} width={item.ngoLogoW} alt={item.name} />
+                <Image className="hidden md:block" src={item.ngoLogo} height={item.ngoLogoH} width={item.ngoLogoW} alt={item.name} />
                 <span className="pl-2 text-black dark:text-white">
                   {item.name}
                 </span>
               </div>
+              <Link
+                href={item.website}
+                className="flex flex-row items-center md:hidden pl-2"
+                target="new"
+              >
+                <span className="pr-2">
+                  Website
+                </span>
+                <OpenLinkIcon white={false} size={10} />
+              </Link>
+              <div className="flex md:hidden justify-center items-center pl-2 my-6">
+                <Link
+                  href="#"
+                  className="inline-flex items-center bg-meta-4 dark:bg-black dark:text-white py-1 px-2 text-center font-medium text-white hover:bg-opacity-90"
+                >
+                  Donate more
+                </Link>
+              </div>
             </div>
 
-            <div className="flex justify-center p-2.5 xl:p-5">
+            <div className="hidden md:flex justify-center p-2.5 xl:p-5">
               <Link
                 href={item.website}
                 className="flex flex-row items-center"
@@ -147,7 +165,7 @@ const DonationsPortfolioTable: FC<IProps> = ({ total, title, actionButtonText })
               </p>
             </div>
 
-            <div className="hidden justify-center items-center sm:flex xl:p-5">
+            <div className="hidden md:flex justify-center items-center xl:p-5">
               <Link
                 href="#"
                 className="inline-flex items-center bg-meta-4 dark:bg-black dark:text-white py-1 px-2 text-center font-medium text-white hover:bg-opacity-90"
