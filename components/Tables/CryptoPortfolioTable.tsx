@@ -96,33 +96,33 @@ const CryptoPortfolioTable: FC<IProps> = ({ total, title, actionButtonText }) =>
       </h4>
 
       <div className="flex flex-col">
-        <div className="grid grid-cols-6 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-6">
+        <div className="grid grid-cols-3 md:grid-cols-6 rounded-sm bg-gray-2 dark:bg-meta-4">
           <div className="p-2.5 xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Crypto
             </h5>
           </div>
-          <div className="p-2.5 text-center xl:p-5">
+          <div className=" p-2.5 text-center xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Held
             </h5>
           </div>
-          <div className="p-2.5 text-center xl:p-5">
+          <div className="hidden md:block p-2.5 text-center xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Invested
             </h5>
           </div>
-          <div className="hidden p-2.5 text-center sm:block xl:p-5">
+          <div className="p-2.5 text-center xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Current value
             </h5>
           </div>
-          <div className="hidden p-2.5 text-center sm:block xl:p-5">
+          <div className="hidden md:block p-2.5 text-center  xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Profit
             </h5>
           </div>
-          <div className="hidden p-2.5 text-center sm:block xl:p-5">
+          <div className="hidden md:block p-2.5 text-center xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Action
             </h5>
@@ -131,7 +131,7 @@ const CryptoPortfolioTable: FC<IProps> = ({ total, title, actionButtonText }) =>
 
         {data.map((item, key) => (
           <div
-            className={`grid grid-cols-6 sm:grid-cols-6 ${key === data.length - 1
+            className={`grid grid-cols-3 md:grid-cols-6 ${key === data.length - 1
               ? ""
               : "border-b border-stroke dark:border-strokedark"
               }`}
@@ -156,16 +156,25 @@ const CryptoPortfolioTable: FC<IProps> = ({ total, title, actionButtonText }) =>
               </p>
             </div>
 
-            <div className="flex justify-center p-2.5 xl:p-5">
+            <div className="hidden md:flex justify-center p-2.5 xl:p-5">
               <p className="text-black dark:text-white">
                 ${item.invested}
               </p>
             </div>
 
-            <div className="hidden justify-center p-2.5 sm:flex xl:p-5">
+            <div className="justify-center p-2.5 sm:flex xl:p-5">
               <p className="text-black dark:text-white">
                 ${item.current}
               </p>
+              <p className={`md:hidden ${item.levelUp ? 'text-success' : 'text-d'}`}>
+                {item.profit}
+              </p>
+              <Link
+                href="#"
+                className="inline-flex md:hidden items-center bg-meta-4 dark:bg-black dark:text-white my-5 py-1 px-2 text-center font-medium text-white hover:bg-opacity-90"
+              >
+                Withdraw
+              </Link>
             </div>
 
             <div className="hidden justify-center p-2.5 sm:flex xl:p-5 text-meta-7">
