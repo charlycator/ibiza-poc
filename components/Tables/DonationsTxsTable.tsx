@@ -5,6 +5,7 @@ import saveTheChildrenLogo from '../../images/ngo-save-the-children.png';
 import ukraineLogo from '../../images/ngo-ukraine.png';
 import yuvaLogo from '../../images/ngo-yuva.jpg';
 import redCrossLogo from '../../images/ngo-red-cross.png';
+import wwfLogo from '../../images/ngo-wwf-green.png'
 import Link from "next/link";
 
 type DONATIONS_DATA = {
@@ -28,6 +29,16 @@ const data: DONATIONS_DATA[] = [
     ngoLogoH: 40,
     ngoLogoW: 30,
     name: 'Humanitarian Assistance to Ukrainians',
+  },
+  {
+    date: '25/08/2023',
+    crypto: 'Ether',
+    cryptoSymbol: 'ETH',
+    cryptoAmount: 0.13,
+    ngoLogo: wwfLogo,
+    ngoLogoH: 40,
+    ngoLogoW: 40,
+    name: 'World Wild Life',
   },
   {
     date: '25/08/2023',
@@ -68,6 +79,16 @@ const data: DONATIONS_DATA[] = [
     ngoLogoH: 40,
     ngoLogoW: 30,
     name: 'Humanitarian Assistance to Ukrainians',
+  },
+  {
+    date: '15/08/2023',
+    crypto: 'Ether',
+    cryptoSymbol: 'ETH',
+    cryptoAmount: 0.13,
+    ngoLogo: wwfLogo,
+    ngoLogoH: 40,
+    ngoLogoW: 40,
+    name: 'World Wild Life',
   },
   {
     date: '15/07/2023',

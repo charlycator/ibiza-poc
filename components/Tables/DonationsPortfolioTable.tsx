@@ -13,6 +13,7 @@ import saveTheChildrenLogo from '../../images/ngo-save-the-children.png';
 import ukraineLogo from '../../images/ngo-ukraine.png';
 import yuvaLogo from '../../images/ngo-yuva.jpg';
 import redCrossLogo from '../../images/ngo-red-cross.png';
+import wwfLogo from '../../images/ngo-wwf-green.png';
 
 type DONATIONS_PORTFOLIO = {
   ngoLogo: StaticImageData | string;
@@ -37,6 +38,17 @@ const data: DONATIONS_PORTFOLIO[] = [
     ngoLogoW: 30,
     name: 'Humanitarian Assistance to Ukrainians',
     website: 'https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-rahunok-dlya-gumanitarnoyi-dopomogi-ukrayintsyam-postrajdalim-vid-rosiyskoyi-agresiyi'
+  },
+  {
+    cryptoIcon: <EtherCryptoIcon white={false} />,
+    crypto: 'Ether',
+    cryptoSymbol: 'ETH',
+    cryptoAmount: 0.4,
+    ngoLogo: wwfLogo,
+    ngoLogoH: 40,
+    ngoLogoW: 40,
+    name: 'World Wild Life',
+    website: 'https://www.worldwildlife.org/',
   },
   {
     cryptoIcon: <BitcoinCryptoIcon white={false} />,

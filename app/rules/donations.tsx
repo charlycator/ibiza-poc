@@ -8,10 +8,12 @@ import saveTheChildrenLogo from '../../images/ngo-save-the-children.png';
 import ukraineLogo from '../../images/ngo-ukraine.png';
 import yuvaLogo from '../../images/ngo-yuva.jpg';
 import redCrossLogo from '../../images/ngo-red-cross.png';
+import wwfLogo from '../../images/ngo-wwf-green.png'
 
 
 const DonationsRules: FC = () => {
   const [ukraine, setUkraine] = useState<boolean>(true);
+  const [wwf, setWWF] = useState<boolean>(true);
   const [saveTheChildren, setSaveTheChildren] = useState<boolean>(true);
   const [redCross, setRedCross] = useState<boolean>(true);
   const [yuva, setYuva] = useState<boolean>(true);
@@ -24,6 +26,13 @@ const DonationsRules: FC = () => {
         flag: ukraine,
         cb: setUkraine,
         value: 100
+      },
+      {
+        logo: wwfLogo,
+        name: 'World Wild Life',
+        flag: wwf,
+        cb: setWWF,
+        value: 35
       },
       {
         logo: saveTheChildrenLogo,
