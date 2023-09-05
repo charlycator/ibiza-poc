@@ -17,7 +17,7 @@ const HozonAIRules: FC = () => {
         Tell us your risk level and our AI will do the rest!
       </p>
       <p className='p-6'>
-        We work with AI to invest in a balanced manner according to the level of risk you're willing to take. Just tell us the maximum amount of money you're willing to invest each month, and we'll take care of the rest. By using this new feature, the other strategies will become invalid.
+        We work with AI to invest in a balanced manner according to the level of risk you&apos;re willing to take. Just tell us the maximum amount of money you&apos;re willing to invest each month, and we&apos;ll take care of the rest. By using this new feature, the other strategies will become invalid.
       </p>
       <div className='p-6'>
         <span className='pr-2'>

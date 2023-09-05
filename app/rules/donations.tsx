@@ -99,7 +99,7 @@ const DonationsRules: FC = () => {
       </div>
       <p className='p-6'>
         Help the causes that you want to support in carrying out their work and reaching more people. We will donate them USDC on a monthly basis, without you having to worry about anything else. We do not charge any fees for this transfer to ensure that they receive the full amount.
-        If you don't have enough USDC in your portfolio, we will charge the necessary amount to your bank account to make possible the donation.
+        If you don&apos;t have enough USDC in your portfolio, we will charge the necessary amount to your bank account to make possible the donation.
       </p>
       <p className='p-6'>
         Right now you are supporting to:
