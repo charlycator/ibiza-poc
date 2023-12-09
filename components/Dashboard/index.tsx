@@ -38,10 +38,10 @@ const ECommerce: React.FC = () => {
           total="4">
         </CardDataStats>
         <CardDataStats
-          actionButtonText="Donate"
+          actionButtonText="Update"
           actionButtonLink="/rules"
-          title="in donations"
-          total="$682">
+          title="this month"
+          total="$68">
         </CardDataStats>
       </div>
 
