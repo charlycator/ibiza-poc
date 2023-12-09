@@ -61,7 +61,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     <aside
       ref={sidebar}
       className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+      }`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 pt-5.5 lg:pt6.5">
@@ -118,8 +118,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         href="/"
                         className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${(pathname === "/" ||
                           pathname.includes("dashboard")) &&
-                          "bg-graydark dark:bg-meta-4"
-                          }`}
+                        "bg-graydark dark:bg-meta-4"
+                        }`}
                       >
                         <svg
                           className="fill-current"
@@ -196,10 +196,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 <Link
                   href="/rules"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes("tables") && "bg-graydark dark:bg-meta-4"
-                    }`}
+                  }`}
                 >
                   <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg"
-                    width="20" height="20" viewBox="0 0 52 52" enableBackground="new 0 0 52 52" >
+                       width="20" height="20" viewBox="0 0 52 52" enableBackground="new 0 0 52 52" >
                     <path d="M50.1,25.4L42,17.3c-0.4-0.4-1.1-0.4-1.5,0L39,18.8c-0.4,0.4-0.4,1.1,0,1.5l2.5,2.5c0.4,0.4,0.1,1.2-0.5,1.2
 	H18.9l13.2-13.1c0.4-0.4,1.2-0.1,1.2,0.5v3.6c0,0.6,0.4,1,1,1l2.1,0c0.6,0,1-0.4,1-1V3.4c0-0.6-0.4-1-1-1H25c-0.5,0-1,0.5-1,1.1l0,2
 	c0,0.6,0.4,1,1,1h3.6c0.6,0,0.9,0.7,0.5,1.2L12.9,23.9H3C2.4,23.9,2,24.4,2,25v2.1c0,0.6,0.6,1.1,1.1,1.1h10l16.1,16.1
@@ -217,7 +217,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 <Link
                   href="/recurring-investments"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes("tables") && "bg-graydark dark:bg-meta-4"
-                    }`}
+                  }`}
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd" d="M10.8321 1.24802C11.5779 0.917327 12.4221 0.917327 13.1679 1.24802L21.7995 5.0754C23.7751 5.95141 23.1703 9 21.0209 9H2.97906C0.829669 9 0.224891 5.9514 2.20047 5.0754L10.8321 1.24802ZM12.3893 3.12765C12.1407 3.01742 11.8593 3.01742 11.6107 3.12765L3.41076 6.76352C3.31198 6.80732 3.34324 6.95494 3.45129 6.95494H20.5487C20.6568 6.95494 20.688 6.80732 20.5892 6.76352L12.3893 3.12765Z" fill="#ffffff" />
@@ -236,7 +236,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 <Link
                   href="/crypto-portfolio"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes("tables") && "bg-graydark dark:bg-meta-4"
-                    }`}
+                  }`}
                 >
                   <svg width="20" height="20" viewBox="0 0 32 32" id="i-portfolio" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                     <path d="M29 17 L29 28 3 28 3 17 M2 8 L30 8 30 16 C30 16 24 20 16 20 8 20 2 16 2 16 L2 8 Z M16 22 L16 18 M20 8 C20 8 20 4 16 4 12 4 12 8 12 8" />
@@ -247,7 +247,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu TX Crypto portfolio --> */}
 
               {/* <!-- Menu Donations --> */}
-              <li>
+              {/* <li>
                 <Link
                   href="/donations"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes("tables") && "bg-graydark dark:bg-meta-4"
@@ -258,16 +258,16 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   </svg>
                   Donations
                 </Link>
-              </li>
+              </li> */}
               {/* <!-- Menu Donations --> */}
 
               {/* <!-- Menu Academy --> */}
               <li>
-              <Link
+                <Link
                   href="/academy"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes("settings") &&
-                    "bg-graydark dark:bg-meta-4"
-                    }`}
+                  "bg-graydark dark:bg-meta-4"
+                  }`}
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -278,7 +278,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       d="M12,22a1,1,0,0,1-1-1,2,2,0,0,0-2-2H3a1,1,0,0,1-1-1V3A1,1,0,0,1,3,2H9a4,4,0,0,1,4,4,1,1,0,0,1-2,0A2,2,0,0,0,9,4H4V17H9a4,4,0,0,1,4,4A1,1,0,0,1,12,22Z" />
                   </svg>
                   Academy
-                </Link>                
+                </Link>
               </li>
               {/* <!-- Menu Academy --> */}
 
@@ -287,8 +287,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 <Link
                   href="/settings"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes("settings") &&
-                    "bg-graydark dark:bg-meta-4"
-                    }`}
+                  "bg-graydark dark:bg-meta-4"
+                  }`}
                 >
                   <svg
                     className="fill-current"

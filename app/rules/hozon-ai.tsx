@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import Image from "next/image";
 
-import newBadge from '../../images/new-badge.png';
+import newBadge from '../../images/hot-icon.png';
 
 
 const HozonAIRules: FC = () => {
   return (
     <div className="rounded-sm border border-stroke shadow-default bg-white dark:border-strokedark dark:bg-boxdark">
-      <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark flex flex-row items-center">
-        <Image src={newBadge} alt="New feature" width={70} height={40} />
+      <div className="border-b border-stroke pt-4 pb-2 px-6.5 dark:border-strokedark flex flex-row items-center">
+        <Image src={newBadge} alt="New feature" width={14} height={14} />
         <h1 className="text-2xl pl-4 text-meta-1 font-bold">
           HOZON AI
         </h1>
