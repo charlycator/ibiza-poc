@@ -4,5 +4,7 @@ POC for a web3 fintech that allows users to invest their spare change into crypt
 Only the FE
 
 ## Technologies
-React
-Next js 14
+- React
+- Typescript
+- Tailwind
+- Next.js 13 - app router
